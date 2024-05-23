@@ -39,9 +39,9 @@ public class PrecioPorRepController {
     }
 
     @GetMapping("/precioByMotorYReparacion/{reparacion}/{tipoDeMotor}")
-    public ResponseEntity<Integer> getPrecioByTipoDeMotorYRep(@PathVariable String reparacion,@PathVariable String tipoDeMotor) {
-        Integer precio = precioPorRepService.getPrecioByTipoRepYTipoDeMotor(reparacion,tipoDeMotor);
-        return ResponseEntity.ok(precio);
+    public ResponseEntity<Integer> getPrecioByRepYTipoDeMotor(@PathVariable String reparacion,@PathVariable String tipoDeMotor) {
+        Integer response=precioPorRepService.getPrecioByTipoRepYTipoDeMotor(reparacion,tipoDeMotor);
+        return ResponseEntity.ok(response);
     }
 
 

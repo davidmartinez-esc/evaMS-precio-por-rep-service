@@ -20,19 +20,20 @@ public class PrecioPorRepService {
 
     //NO TESTEADA EN CONTROLLERS
     public Integer getPrecioByTipoRepYTipoDeMotor(String tipoDeRep,String tipoDeMotor){
-        Integer precio=-2;
+        Integer precioReal=-1;
 
         if (Objects.equals(tipoDeMotor, "GASOLINA")){
-            precio=precioPorRepRepository.getPrecioRep_MotorGasolina(tipoDeRep);
+            precioReal=precioPorRepRepository.getPrecioRep_MotorGasolina(tipoDeRep);
         } else if (Objects.equals(tipoDeMotor, "DIESEL")) {
-            precio=precioPorRepRepository.getPrecioRep_MotorDiesel(tipoDeRep);
+            precioReal=precioPorRepRepository.getPrecioRep_MotorDiesel(tipoDeRep);
         } else if (Objects.equals(tipoDeMotor, "HIBRIDO")) {
-            precio=precioPorRepRepository.getPrecioRep_MotorHibrido(tipoDeRep);
+            precioReal=precioPorRepRepository.getPrecioRep_MotorHibrido(tipoDeRep);
 
         } else if (Objects.equals(tipoDeMotor, "ELECTRICO")) {
-            precio=precioPorRepRepository.getPrecioRep_MotorElectrico(tipoDeRep);
+            precioReal=precioPorRepRepository.getPrecioRep_MotorElectrico(tipoDeRep);
         }
-        return precio;
+
+        return precioReal;
 
     }
 
